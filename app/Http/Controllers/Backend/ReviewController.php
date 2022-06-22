@@ -20,10 +20,10 @@ class ReviewController extends Controller
     public function __construct()
     {
         //$this->middleware('auth');
-        $this->middleware('permission:review-list|review-create|review-edit|review-delete', ['only' => ['index', 'show']]);
-        $this->middleware('permission:review-create', ['only' => ['create', 'store']]);
-        $this->middleware('permission:review-edit', ['only' => ['edit', 'update']]);
-        $this->middleware('permission:review-delete', ['only' => ['destroy']]);
+        $this->middleware('permission:reviews|addReview|editReview|deleteReview', ['only' => ['index', 'show']]);
+        $this->middleware('permission:addReview', ['only' => ['create', 'store']]);
+        $this->middleware('permission:editReview', ['only' => ['edit', 'update']]);
+        $this->middleware('permission:deleteReview', ['only' => ['destroy']]);
     }
 
     /**

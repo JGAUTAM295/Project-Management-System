@@ -23,10 +23,10 @@ class ProjectController extends Controller
     {
         //$this->middleware('auth');
 
-        $this->middleware('permission:project-list|project-create|project-edit|project-delete', ['only' => ['index', 'show']]);
-        $this->middleware('permission:project-create', ['only' => ['create', 'store']]);
-        $this->middleware('permission:project-edit', ['only' => ['edit', 'update']]);
-        $this->middleware('permission:project-delete', ['only' => ['destroy']]);
+        $this->middleware('permission:projects|addProject|viewProject|editProject|deleteProject', ['only' => ['index', 'show']]);
+        $this->middleware('permission:addProject', ['only' => ['create', 'store']]);
+        $this->middleware('permission:editProject', ['only' => ['edit', 'update']]);
+        $this->middleware('permission:deleteProject', ['only' => ['destroy']]);
     }
    
     

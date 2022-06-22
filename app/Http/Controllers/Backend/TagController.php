@@ -22,10 +22,10 @@ class TagController extends Controller
     public function __construct()
     {
         //$this->middleware('auth');
-        $this->middleware('permission:tag-list|tag-create|tag-edit|tag-delete', ['only' => ['index', 'show']]);
-        $this->middleware('permission:tag-create', ['only' => ['create', 'store']]);
-        $this->middleware('permission:tag-edit', ['only' => ['edit', 'update']]);
-        $this->middleware('permission:tag-delete', ['only' => ['destroy']]);
+        $this->middleware('permission:tags|addTag|viewTag|editTag|deleteTag', ['only' => ['index', 'show']]);
+        $this->middleware('permission:addTag', ['only' => ['create', 'store']]);
+        $this->middleware('permission:editTag', ['only' => ['edit', 'update']]);
+        $this->middleware('permission:deleteTag', ['only' => ['destroy']]);
     }
     
     /**
